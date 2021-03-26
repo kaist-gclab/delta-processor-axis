@@ -1,6 +1,7 @@
-/*
- * Code from https://github.com/ialhashim/powercrust,
- * a C++ ported version of the powercrust software.
+/**
+ * This file a modified version from https://github.com/ialhashim/powercrust,
+ * which is a C++ ported of the original powercrust code
+ * (https://www.cs.ucdavis.edu/~amenta/powercrust.html).
  */
 
 /*
@@ -351,7 +352,7 @@ void make_output(simplex *root,
                  FILE *F)
 {
     out_funcp(0,0,F,-1);
-    visit(0, out_funcp);
+    visit(0, (void *) out_funcp);
     visit_gen(root, visit);
     out_funcp(0,0,F,1);
     /*  efclose(F); */
