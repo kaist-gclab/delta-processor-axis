@@ -38,12 +38,17 @@ $ docker run --rm \
 
 - `--rm` 옵션은 컨테이너가 실행된 이후 자동으로 컨테이너를 삭제하는 옵션입니다.
     - 지정해주지 않아도 실행에 문제가 없으나, 불필요한 컨테이너가 쌓이는 것을 방지하기 위해 권장하는 옵션입니다.
-- `-v`는 volume을 맵핑해주는 옵션으로, input 파일과 output 파일을 교환하기 위해 사용됩니다.
-    - Volume으로 지정하는 폴더 안에 input 파일이 포함되도록 설정해주세요.
-    - 또한 Volume 설정을 하실 때, 상대경로가 아닌 절대경로로 지정해주어야 한다는 것에 유의해주세요.
-- `delta-processor-axis`는 앞선 스크립트에서 지정해주었던 이미지의 태그 이름입니다.
+- `-v`는 volume을 매핑해주는 옵션으로, input 파일과 output 파일을 교환하기 위해 사용됩니다.
+    - Volume으로 지정하는 폴더 안에 input 파일이 포함되도록 설정해 주세요.
+    - 또한 Volume 설정을 하실 때, 상대경로가 아닌 절대경로로 지정해주어야 한다는 것에 유의해 주세요.
+- `delta-processor-axis`는 앞선 스크립트에서 지정해 주었던 이미지의 태그 이름입니다.
 - `[ARGUMENTS]`에는 powercrust가 받는 인자가 들어갑니다.
-    - 인자에 어떤 것들이 있는지는 [ORIGINAL_README](./powercrust/ORIGINAL_README)를 참고해주세요.
+    - 인자에 어떤 것들이 있는지는 [ORIGINAL_README](./powercrust/ORIGINAL_README)를 참고해 주세요.
 - `INPUT_FILE_NAME`은 medial axis를 수행할 3d 모델 파일이 들어갑니다.
     - 현재까지 `.pts` 파일과 `.off` 파일 포맷만 지원합니다.
 
+
+**코드를 통해 Docker 컨테이너 실행하기**:
+
+Docker는 CLI뿐만 아니라 Python, Go 등의 코드를 이용하여 실행할 수도 있습니다.  
+[Jupyter Notebook 예제](example-usage.ipynb)에 Python으로 작성된 예제가 포함되어 있습니다.
