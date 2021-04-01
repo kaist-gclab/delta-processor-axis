@@ -1,4 +1,4 @@
-# delta-processor-axis &middot; [![GitHub license](https://img.shields.io/github/license/kaist-gclab/delta-processor-axis)](https://github.com/kaist-gclab/delta-processor-axis/blob/main/LICENSE)
+# delta-processor-axis &middot; [![GitHub license](https://img.shields.io/github/license/kaist-gclab/delta-processor-axis)](https://github.com/kaist-gclab/delta-processor-axis/blob/main/LICENSE)  [![CircleCI main](https://img.shields.io/circleci/build/gh/kaist-gclab/delta-processor-axis/main?label=main)](https://circleci.com/gh/kaist-gclab/delta-processor-axis/tree/main) [![CircleCI develop](https://img.shields.io/circleci/build/gh/kaist-gclab/delta-processor-axis/develop?label=develop)](https://circleci.com/gh/kaist-gclab/delta-processor-axis/tree/develop)
 
 SW스타랩 &lt;3차원 기하 모델 프로세싱 프레임워크 개발&gt; 미디얼 액시스 근사 계산 노드
 
@@ -47,6 +47,14 @@ $ docker run --rm \
 - `INPUT_FILE_NAME`은 medial axis를 수행할 3d 모델 파일이 들어갑니다.
     - 현재까지 `.pts` 파일과 `.off` 파일 포맷만 지원합니다.
 
+
+**정상 동작 확인을 위한 테스트**:
+
+단순하게 코드가 정상동작하는지 테스트를 위해서는 아래 코드를 실행하면 됩니다.
+
+```bash
+$ ./test.sh
+```
 
 **코드를 통해 Docker 컨테이너 실행**:
 

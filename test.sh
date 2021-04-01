@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
 
+echo "================== Build Image =================="
+
 docker build -t kaistgclab/delta-processor-axis .
 
 mkdir testfiles && cp powercrust/knot.pts testfiles
 
-docker run --rm \
+echo ""
+echo "================== Run Media Axis =================="
+
+time docker run --rm \
     -v $(pwd)/testfiles:/data \
     kaistgclab/delta-processor-axis \
     -m 100000 -i knot.pts
+
+echo ""
+echo "================== Check Outputs =================="
 
 FILE=testfiles/axis.off
 if [ -f "$FILE" ]; then
