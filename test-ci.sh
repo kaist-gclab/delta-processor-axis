@@ -9,21 +9,29 @@ docker build -t kaistgclab/delta-processor-axis .
 # https://circleci.com/docs/2.0/building-docker-images/#mounting-folders
 
 # Create a dummy container which will hold a volume for 3d model file
-docker create -v /data --name axis kaistgclab/delta-processor-axis /bin/true
+docker create \
+    -v /data \
+    --name vcontainer \
+    kaistgclab/delta-processor-axis \
+    /bin/true
 
 # Copy model file
-docker cp powercrust/knot.pts axis:/data
+docker cp powercrust/knot.pts vcontainer:/data
 
 # Run container
-docker run --volumes-from axis --name app kaistgclab/delta-processor-axis -m 100000 -i knot.pts
+docker run \
+    --volumes-from vcontainer \
+    --name app \
+    kaistgclab/delta-processor-axis \
+    -m 100000 \
+    -i knot.pts
 
-mkdir output
-
-# Copy output 
-docker cp app:/data ./output
+# Copy output (the entire `data` directory
+# is copied to the current location)
+docker cp app:/data .
 
 # Check axis.off file exists
-FILE=output/data/axis.off
+FILE=data/axis.off
 if [ -f "$FILE" ]; then
     echo "$FILE exists."
 else 
