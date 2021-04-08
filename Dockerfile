@@ -13,7 +13,7 @@ RUN make
 
 # Create an entry script for running powercrust
 # and writing result.json
-RUN echo "#\!/usr/bin/env bash\
+RUN echo "#!/usr/bin/env bash\
 \n/app/powercrust \"\$@\"\
 \necho \"{\\\"output\\\": \\\"axis.off\\\"}\" > result.json\
 " >> run.sh && chmod +x run.sh
