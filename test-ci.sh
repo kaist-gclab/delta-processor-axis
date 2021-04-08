@@ -30,6 +30,15 @@ docker run \
 # is copied to the current location)
 docker cp app:/data .
 
+# Check result.json file exists under `data` directory.
+RESULT_FILE=data/result.json
+if [ -f "$RESULT_FILE" ]; then
+    echo "$RESULT_FILE exists."
+else 
+    echo "$RESULT_FILE does not exist."
+    exit 1
+fi
+
 # Check axis.off file exists
 FILE=data/axis.off
 if [ -f "$FILE" ]; then
