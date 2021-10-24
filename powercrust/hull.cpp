@@ -266,7 +266,7 @@ point get_another_site(void) {
     /*static int scount =0; */
     point pnext;
 
-    if (!(++scount%1000)) {fprintf(DFILE,"site %d...", scount);}
+    // if (!(++scount%1000)) {fprintf(DFILE,"site %d...", scount);}
     /*  check_triang(); */
     pnext = (*get_site)();
     if (!pnext) return NULL;
