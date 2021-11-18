@@ -883,6 +883,9 @@ int main(int argc, char **argv) {
     system("rm -f head pole axis axisface tpoleinfo sp");
     /* power shape output done */
     
+    fprintf(stderr, "%s\n", "작업 완료");
+    getchar();
+
     efclose(INPOLE);
     efclose(OUTPOLE);
     efclose(INPBALL);
