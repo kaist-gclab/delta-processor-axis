@@ -373,6 +373,8 @@ bool strequals(const std::string& a, const std::string& b)
 #include <fstream>
 #include <sstream>
 
+long getMemoryUsage();
+
 int main(int argc, char **argv) {
 
     long    seed = 0, poleid=0;
