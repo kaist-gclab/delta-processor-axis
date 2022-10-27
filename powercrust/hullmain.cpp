@@ -882,9 +882,9 @@ int main(int argc, char **argv) {
 
     system("rm -f head pole axis axisface tpoleinfo sp");
     /* power shape output done */
-    
-    fprintf(stderr, "%s\n", "작업 완료");
-    getchar();
+
+    long memoryUsage = getMemoryUsage();
+    printf("\n\nMemory usage: %d bytes (~%d MB)\n", memoryUsage, memoryUsage / 1024 / 1024);
 
     efclose(INPOLE);
     efclose(OUTPOLE);
