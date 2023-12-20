@@ -16,7 +16,7 @@ int main()
             break;
         }
 
-        if (uniform_real_distribution<double>(0, 1)(eng) < 9.5 * M_PI / 1000.0)
+        if (uniform_real_distribution<double>(0, 1)(eng) < 5.7 * M_PI / 1000.0)
         {
             printf("%s %s %s\n", a, b, c);
         }

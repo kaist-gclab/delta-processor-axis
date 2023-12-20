@@ -152,6 +152,7 @@ void powershape::outputPlot(ofstream& outFile) {
         outFile<<i<<"\t"<<verts[pqueue[i]].distance<<"\n";
     }
 
+    free(pqueue);
 }
 
 double powershape::distance(int i,int j) {
@@ -212,6 +213,7 @@ void powershape::redRemove() {
 
     }
     cout<<"Number of points removed by the redundancy criterion\t"<<numPoints<<"\n";
+    free(pqueue);
 }
 
 

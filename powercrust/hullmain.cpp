@@ -277,6 +277,9 @@ void make_shuffle(void){
 
     if (mat_size<=num_sites) {
         mat_size = num_sites+1;
+        if (shufmat) {
+            free(shufmat);
+        }
         shufmat = (long*)malloc(mat_size*sizeof(long));
     }
     for (i=0;i<=num_sites;i++) {
@@ -656,6 +659,8 @@ int main(int argc, char **argv) {
 
         free_hull_storage(); 
   
+        free(pole1_distance);
+        free(pole2_distance);
     } /* do this if the input was a set of samples not poles */
 
     /*  mult_up = mult_up1;  set the multiplier for the 2nd Delaunay */
