@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    default_random_engine eng(20221028);
+    default_random_engine eng(20231221);
 
     for (;;)
     {
