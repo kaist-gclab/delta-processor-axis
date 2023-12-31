@@ -1,4 +1,4 @@
 # A simple Makefile
 
 all:
-	g++ *.cpp -fpermissive -o powercrust -O2
+	g++ *.cpp -fpermissive --std=c++20 -o powercrust -O2
