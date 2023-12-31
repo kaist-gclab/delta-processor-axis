@@ -100,14 +100,14 @@ void Ax_plus_y_test(Coord a, point x, point y) {
 
 void Vec_scale(int n, Coord a, Coord *x)
 {
-    register Coord *xx = x,
+    Coord *xx = x,
         *xend = xx + n;
     while (xx!=xend) *xx++ *= a;
 }
 
 void Vec_scale_test(int n, Coord a, Coord *x)
 {
-    register Coord *xx = x,
+    Coord *xx = x,
         *xend = xx + n  ;
 
     check_overshoot(a);
